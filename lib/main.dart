@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vehicle/screens/name_screen.dart';
 
 import 'ApiService/api_services.dart';
+import 'BLOC/vehicle_booking_bloc.dart';
 import 'BLOC/vehicle_model_bloc.dart';
 import 'BLOC/vehicle_type_bloc.dart';
 import 'BLOC/vehicle_type_event.dart';
@@ -22,6 +23,8 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => VehicleModelBloc(apiService: ApiService()),
+        ), BlocProvider(
+          create: (context) => BookingBloc(apiService: ApiService()),
         ),
       ],
       child: MaterialApp(

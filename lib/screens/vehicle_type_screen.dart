@@ -19,7 +19,7 @@ class VehicleTypeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.deepPurple.shade300,
+        backgroundColor: Colors.deepPurple.shade400,
         title: Text(
           "Vehicle App",
           style: TextStyle(
@@ -55,7 +55,7 @@ class VehicleTypeScreen extends StatelessWidget {
                       margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                       decoration: BoxDecoration(
                         border: Border.all(
-                          color: isSelected ? Colors.deepPurple.shade300 : Colors.black12,
+                          color: isSelected ? Colors.deepPurple.shade400 : Colors.black12,
                           width: 2,
                         ),
                         borderRadius: BorderRadius.circular(8),
@@ -135,7 +135,7 @@ class VehicleTypeScreen extends StatelessWidget {
         height: 50,
         alignment: Alignment.center,
         decoration: BoxDecoration(
-          color: Colors.deepPurple.shade300,
+          color: Colors.deepPurple.shade400,
           borderRadius: BorderRadius.circular(25),
           boxShadow: [
             BoxShadow(

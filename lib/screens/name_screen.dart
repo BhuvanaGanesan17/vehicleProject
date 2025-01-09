@@ -63,7 +63,7 @@ class NameFormScreenState extends State<NameFormScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.deepPurple.shade300,
+        backgroundColor: Colors.deepPurple.shade400,
         title: Text(
           "Vehicle App",
           style: TextStyle(
@@ -142,7 +142,7 @@ class NameFormScreenState extends State<NameFormScreen> {
         height: 50,
         alignment: Alignment.center,
         decoration: BoxDecoration(
-          color: Colors.deepPurple.shade300, // Button background color
+          color: Colors.deepPurple.shade400, // Button background color
           borderRadius: BorderRadius.circular(25), // Adjust the radius as needed
           boxShadow: [
             BoxShadow(
@@ -189,7 +189,7 @@ class CustomTextField extends StatelessWidget {
         labelText: fieldName,
         border: const OutlineInputBorder(),
         focusedBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: Colors.deepPurple.shade300),
+          borderSide: BorderSide(color: Colors.deepPurple.shade400),
         ),
         labelStyle: const TextStyle(color: Colors.deepPurple),
       ),

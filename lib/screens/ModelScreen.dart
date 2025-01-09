@@ -10,6 +10,7 @@ import 'package:vehicle/BLOC/vehicle_model_state.dart';
 import 'package:vehicle/SQLite/database_helper.dart';
 
 import '../model/vehicles.dart';
+import 'BookingScreen.dart';
 
 class VehicleModelScreen extends StatefulWidget {
   final List<String> vehicleIds;
@@ -30,7 +31,7 @@ class VehicleModelScreenState extends State<VehicleModelScreen> {
         ..add(FetchVehicleModels(widget.vehicleIds)),
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.deepPurple.shade300,
+          backgroundColor: Colors.deepPurple.shade400,
           title: Text(
             "Vehicle App",
             style: TextStyle(
@@ -162,12 +163,17 @@ class VehicleModelScreenState extends State<VehicleModelScreen> {
             'selected_vehicle_name',
             selectedVehicle.name ?? 'Unnamed Vehicle',
           );
-
-          // Show success message
-          ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: Text('Vehicle saved successfully!')),
+          await dbHelper.saveData(
+            'selected_vehicle_image',
+            selectedVehicle.image?.publicURL ?? 'Unnamed image',
           );
 
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => BookingScreen(vehicleId: selectedVehicleId),
+            ),
+          );
           // Perform next action (e.g., navigation)
         } else {
           // Show validation message
@@ -181,7 +187,7 @@ class VehicleModelScreenState extends State<VehicleModelScreen> {
         height: 50,
         alignment: Alignment.center,
         decoration: BoxDecoration(
-          color: Colors.deepPurple.shade300,
+          color: Colors.deepPurple.shade400,
           borderRadius: BorderRadius.circular(25),
           boxShadow: [
             BoxShadow(
